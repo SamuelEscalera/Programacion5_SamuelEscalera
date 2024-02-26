@@ -1,3 +1,4 @@
+module TareaCurriedFunctions where
 -- EJEMPLO Aare de un triangulo
 -- funcion para calcular el área de un triángulo
 areaTriangulo :: Float -> Float -> Float
