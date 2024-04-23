@@ -1,5 +1,6 @@
-module Scanner where 
+{-# LANGUAGE UndecidableInstances #-}
 
+module Scanner where 
 import Data.Char (isAlphaNum)
 
 type Col = Int
@@ -15,10 +16,25 @@ data Type = String
         | Keyword
         | EndSlide
         | Error
-        deriving(Eq)
+        deriving(Eq, Ord)
 
 instance Show Token where
     show (Token t v l c) = show t ++ show v ++ " " ++ show l ++ " " ++ show c ++ "\n"
+
+instance (Eq Type) => (Eq Token) where
+    (Token String s1 _ _) == (Token String s2 _ _) = s1 == s2
+    (Token OpenBlock _ _ _) == (Token OpenBlock _ _ _) = True
+    (Token EndBlock _ _ _) == (Token EndBlock _ _ _) = True
+    (Token Keyword k1 _ _) == (Token Keyword k2 _ _) = k1 == k2
+    (Token Error k1 _ _) == (Token Error k2 _ _) = k1 == k2
+    (Token EndSlide _ _ _) == (Token EndSlide _ _ _) = True
+    (Token t1 s1 _ _ ) == (Token t2 s2 _ _ ) = t1 == t2 && s1 == s2
+    
+instance Ord Token where
+    compare x y | x == y = EQ
+                | x <= y = LT
+                | otherwise = GT
+    (Token t1 s1 _ _ ) <= (Token t2 s2 _ _ ) = t1 < t2 || (t1 == t2 && s1 <= s2)
 
 instance Show Type where
     show String = "String: "

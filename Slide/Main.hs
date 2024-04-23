@@ -1,6 +1,5 @@
 module Main where
 
-
 import Scanner(scanner)
 import UU.Parsing
 import Parser
