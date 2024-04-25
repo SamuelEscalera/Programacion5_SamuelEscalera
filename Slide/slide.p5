@@ -1,22 +1,17 @@
-! Este es un titulo
+! Titilo slide 1
 {
-# Hola
-
-asdasdasd 
-asdasdasdasd
-Spacedas
-das
-dasasd
+# H1 Slide1
+Texto1 slide1
+Texto2 slide1
 }
-; comentario
+; comentario que debe ser ignorado
 ---
 
-
-
-
-! Este es un titulo 2
+! Titulo slide 2
 {
-# Hola
+# H1 Slide2
+Texto1 slide2
+Texto2 slide2
 
 }
 --- 
