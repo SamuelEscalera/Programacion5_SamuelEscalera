@@ -14,7 +14,7 @@ main = do
     tree <- parseIO pSlides token
     putStrLn (show tree)
     putStrLn "*******************"
-    putStrLn "Generating HTML for all slides"
+    putStrLn "Generating HTML"
     let html = generateHTMLForSlides tree
     writeFile "index.html" html
     putStrLn "¡Archivo escrito con éxito!"   

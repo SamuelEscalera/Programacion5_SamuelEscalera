@@ -38,8 +38,13 @@ generateTitleHTML :: TitleSlide -> String
 generateTitleHTML (TitleSlide title) = "<title>" ++ title ++ "</title>"
 
 generateBodyHTML :: BodySlide -> String
-generateBodyHTML (BodySlide blocks) = "<body>\n" ++ concatMap generateBlockHTML blocks ++ "</body>"
+generateBodyHTML (BodySlide blocks) = "<body>\n" ++ concatMap generateBlockHTML blocks ++ "</body>\n"
 
 generateBlockHTML :: MarkdownBlock -> String
 generateBlockHTML (MdParagraph paragraph) = "<p>" ++ paragraph ++ "</p>\n"
 generateBlockHTML (MdH1 title) = "<h1>" ++ title ++ "</h1>\n"
+generateBlockHTML (MdH2 title) = "<h2>" ++ title ++ "</h2>\n"
+generateBlockHTML (MdH3 title) = "<h3>" ++ title ++ "</h3>\n"
+generateBlockHTML (MdH4 title) = "<h4>" ++ title ++ "</h4>\n"
+generateBlockHTML (MdH5 title) = "<h5>" ++ title ++ "</h5>\n"
+generateBlockHTML (MdH6 title) = "<h6>" ++ title ++ "</h6>\n"

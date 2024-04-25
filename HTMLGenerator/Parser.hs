@@ -14,7 +14,12 @@ pBodySlide = BodySlide <$ pOpenBlock "{" <*> pList pMarckdownBlock <* pEndBlock 
  
 pMarckdownBlock = MdParagraph <$> pStrings
                <|> MdH1 <$ pKeyword "#" <*> pStrings
- 
+               <|> MdH2 <$ pKeyword "##" <*> pStrings
+               <|> MdH3 <$ pKeyword "###" <*> pStrings
+               <|> MdH4 <$ pKeyword "####" <*> pStrings
+               <|> MdH5 <$ pKeyword "#####" <*> pStrings
+               <|> MdH6 <$ pKeyword "######" <*> pStrings
+
 --- Join Scanner with Parser
 instance Symbol Token
  
