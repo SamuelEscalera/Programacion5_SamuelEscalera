@@ -20,7 +20,8 @@ pMarckdownBlock = MdParagraph <$> pStrings
                <|> MdH5 <$ pKeyword "#####" <*> pStrings
                <|> MdH6 <$ pKeyword "######" <*> pStrings
                <|> MdLink <$ pKeyword "<" <*> pStrings <* pKeyword ">"
-               <|> MdBackground <$ pKeyword "*" <*> pStrings
+               <|> MdBackgroundColor <$ pKeyword "$" <*> pStrings
+               <|> MdBackGroundImg <$ pKeyword "$$" <*> pStrings
                <|> MdProgress <$ pKeyword "?" <*> pStrings
                <|> MdImg <$ pKeyword "[" <*> pStrings <* pKeyword "]"
 

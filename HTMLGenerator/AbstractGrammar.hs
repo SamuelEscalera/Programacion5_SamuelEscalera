@@ -11,7 +11,8 @@ type H4 = String
 type H5 = String
 type H6 = String
 type Link = String
-type Background = String
+type BackgroundColor= String
+type BackgroundImg = String
 type Progress = String
 type Img = String
 
@@ -38,7 +39,8 @@ data MarkdownBlock = MdParagraph Paragraph
                     | MdH5 H5
                     | MdH6 H6
                     | MdLink Link
-                    | MdBackground Background
+                    | MdBackgroundColor BackgroundColor
                     | MdProgress Progress
                     | MdImg Img
+                    | MdBackGroundImg BackgroundImg
         deriving Show
