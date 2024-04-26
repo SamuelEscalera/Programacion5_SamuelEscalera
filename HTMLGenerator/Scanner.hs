@@ -64,6 +64,7 @@ scan (x:xs) l c
     | x == '#' = Token Keyword [x] l c: scan xs l (c+1)
     | x == '<' = Token Keyword [x] l c: scan xs l (c+1)
     | x == '>' = Token Keyword [x] l c: scan xs l (c+1)
+    | x == '*' = Token Keyword [x] l c: scan xs l (c+1)
     | x == '{' = Token OpenBlock [x] l c: scan xs l (c+1)
     | x == '}' = Token EndBlock [x] l c: scan xs l (c+1)
     | x == ';' = scan (dropWhile (/= '\n') xs) (l+1) 1

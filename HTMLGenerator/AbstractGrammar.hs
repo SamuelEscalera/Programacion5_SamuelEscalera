@@ -11,6 +11,7 @@ type H4 = String
 type H5 = String
 type H6 = String
 type Link = String
+type Background = String
 
 data Slides = Slides [Slide]
     deriving Show
@@ -35,4 +36,5 @@ data MarkdownBlock = MdParagraph Paragraph
                     | MdH5 H5
                     | MdH6 H6
                     | MdLink Link
+                    | MdBackground Background
         deriving Show

@@ -1,23 +1,21 @@
-! Titilo slide 1
+! 1
 {
-# H1 Slide1
-## H2 Slide1
-Texto1 slide1 prueba1
-Texto2 slide1 prueba1
+#  HTML Generator
+## Student
+Samuel Escalera Herrera
+*lightblue
 }
 ; comentario que debe ser ignorado
 ---
 
-! Titulo slide 2
+! 2
 {
-# H1 Slide2 prueba1
-### H3 Slide2
-#### H4 Slide2
-##### H5 Slide2
-###### H6 Slide2
-Texto1 slide2 prueba1
-Texto2 slide2 prueba1
-<link>
-
+# Pruebas
+### MdH3
+#### MdH4
+##### MdH5
+###### MdH6
+Repo git
+<https://github.com/SamuelEscalera/Programacion5_SamuelEscalera/tree/main/HTMLGenerator>
 }
 ---

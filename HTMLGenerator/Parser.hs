@@ -20,6 +20,7 @@ pMarckdownBlock = MdParagraph <$> pStrings
                <|> MdH5 <$ pKeyword "#####" <*> pStrings
                <|> MdH6 <$ pKeyword "######" <*> pStrings
                <|> MdLink <$ pKeyword "<" <*> pStrings <* pKeyword ">"
+               <|> MdBackground <$ pKeyword "*" <*> pStrings
 
 --- Join Scanner with Parser
 instance Symbol Token
