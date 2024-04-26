@@ -1,0 +1,12 @@
+! =<title> Title </title>
+{ = OpenBlock <div>
+} = EndBlock </div>
+String = Paragraph <p>String</p>
+# = H1 <H1>String</H1>
+## = H2 <H2>String</H2>
+### = H3 <H3>String</H3>
+#### = H4 <H4>String</H4>
+##### = H5 <H5>String</H5>
+###### = H6 <H6>String</H6>
+; = Coment (Does not appear in the HTML file)
+<String> = link <a href=String> String </a>

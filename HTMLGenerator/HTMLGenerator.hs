@@ -5,21 +5,25 @@ import AbstractGrammar
 
 
 generateHTMLForSlides :: Slides -> String
-generateHTMLForSlides (Slides slides) = concatMap generateHTMLForSlide slides
+generateHTMLForSlides (Slides slides) = 
+    "<!DOCTYPE html>\n" ++
+    "<html>\n" ++
+    "<head>\n" ++
+    "<title>index</title>\n" ++
+    "</head>\n" ++
+    "<body>\n" ++
+    concatMap generateHTMLForSlide slides ++
+    "</body>\n" ++
+    "</html>\n"
 
 generateHTMLForSlide :: Slide -> String
 generateHTMLForSlide slide =
     let titleHTML = generateTitleHTML (getTitleSlide slide)
         bodyHTML = generateBodyHTML (getBodySlide slide)
-    in "<!DOCTYPE html>\n" ++
-       "<html>\n" ++
-       "<head>\n" ++
+    in "<div class=\"slide\">\n" ++ -- Aquí se abre un nuevo div para cada slide
        titleHTML ++
-       "</head>\n" ++
-       "<body>\n" ++
        bodyHTML ++
-       "</body>\n" ++
-       "</html>\n"
+       "</div>\n" -- Aquí se cierra el div de la slide
 
 generatorContent :: String -> String
 generatorContent a = a
@@ -38,7 +42,7 @@ generateTitleHTML :: TitleSlide -> String
 generateTitleHTML (TitleSlide title) = "<title>" ++ title ++ "</title>"
 
 generateBodyHTML :: BodySlide -> String
-generateBodyHTML (BodySlide blocks) = "<body>\n" ++ concatMap generateBlockHTML blocks ++ "</body>\n"
+generateBodyHTML (BodySlide blocks) = concatMap generateBlockHTML blocks ++ "\n"
 
 generateBlockHTML :: MarkdownBlock -> String
 generateBlockHTML (MdParagraph paragraph) = "<p>" ++ paragraph ++ "</p>\n"
@@ -48,3 +52,4 @@ generateBlockHTML (MdH3 title) = "<h3>" ++ title ++ "</h3>\n"
 generateBlockHTML (MdH4 title) = "<h4>" ++ title ++ "</h4>\n"
 generateBlockHTML (MdH5 title) = "<h5>" ++ title ++ "</h5>\n"
 generateBlockHTML (MdH6 title) = "<h6>" ++ title ++ "</h6>\n"
+generateBlockHTML (MdLink link) = "<a href="++ link ++">" ++ link ++ "</a>"
