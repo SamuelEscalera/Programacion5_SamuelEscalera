@@ -15,6 +15,7 @@ type BackgroundColor= String
 type BackgroundImg = String
 type Progress = String
 type Img = String
+type YoutubeVideo = String
 
 data Slides = Slides [Slide]
     deriving Show
@@ -43,4 +44,5 @@ data MarkdownBlock = MdParagraph Paragraph
                     | MdProgress Progress
                     | MdImg Img
                     | MdBackGroundImg BackgroundImg
+                    | MdYoutubeVideo YoutubeVideo
         deriving Show

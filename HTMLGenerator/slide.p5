@@ -3,7 +3,7 @@
 #  HTML Generator
 ## Student
 Samuel Escalera Herrera
-$$https://e1.pxfuel.com/desktop-wallpaper/800/714/desktop-wallpaper-professional-powerpoint-templates-powerpoint-presentation-background.jpg
+$$ https://e1.pxfuel.com/desktop-wallpaper/800/714/desktop-wallpaper-professional-powerpoint-templates-powerpoint-presentation-background.jpg
 }
 ; comentario que debe ser ignorado
 ---
@@ -13,12 +13,18 @@ $$https://e1.pxfuel.com/desktop-wallpaper/800/714/desktop-wallpaper-professional
 # Pruebas
 ## Progress bar
 ? 30
+? 40
+? 50
+? 70
+? 100
 #### Img
 [https://image.spreadshirtmedia.net/image-server/v1/products/T993A1PA2181PT1X42Y45D172809402W15607H11037/views/1,width=378,height=378,appearanceId=1,backgroundColor=F2F2F2/gg-good-game-gaming.jpg]
+[https://steamuserimages-a.akamaihd.net/ugc/913533862976292710/C9986CC4BDBB0DFA59FB7C327EF02EEA68BB18DA/?imw=512&imh=279&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true]
 ##### Link
 Repo git
 <https://github.com/SamuelEscalera/Programacion5_SamuelEscalera/tree/main/HTMLGenerator>
 
-###### MdH6
+###### youtube
+@https://www.youtube.com/embed/UzFZR2dRsSY?si=AhBvOajP4FKkIhhd
 }
 ---

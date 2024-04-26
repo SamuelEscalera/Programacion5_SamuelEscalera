@@ -24,6 +24,7 @@ pMarckdownBlock = MdParagraph <$> pStrings
                <|> MdBackGroundImg <$ pKeyword "$$" <*> pStrings
                <|> MdProgress <$ pKeyword "?" <*> pStrings
                <|> MdImg <$ pKeyword "[" <*> pStrings <* pKeyword "]"
+               <|> MdYoutubeVideo <$ pKeyword "@" <*> pStrings
 
 --- Join Scanner with Parser
 instance Symbol Token
