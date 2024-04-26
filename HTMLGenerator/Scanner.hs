@@ -65,6 +65,9 @@ scan (x:xs) l c
     | x == '<' = Token Keyword [x] l c: scan xs l (c+1)
     | x == '>' = Token Keyword [x] l c: scan xs l (c+1)
     | x == '*' = Token Keyword [x] l c: scan xs l (c+1)
+    | x == '?' = Token Keyword [x] l c: scan xs l (c+1)
+    | x == '[' = Token Keyword [x] l c: scan xs l (c+1)
+    | x == ']' = Token Keyword [x] l c: scan xs l (c+1)
     | x == '{' = Token OpenBlock [x] l c: scan xs l (c+1)
     | x == '}' = Token EndBlock [x] l c: scan xs l (c+1)
     | x == ';' = scan (dropWhile (/= '\n') xs) (l+1) 1
@@ -77,6 +80,7 @@ scan (x:xs) l c
 buildString :: Input -> Col -> (Value, Input, Col)
 buildString [] col = ([], [], col)
 buildString ('>':xs) col = ([], '>' : xs, col + 1)
+buildString (']':xs) col = ([], ']' : xs, col + 1)
 buildString (x:xs) col
     | x == '\n' = ([], xs, col)
     | otherwise = let (str, rest, col') = buildString xs (col+1)

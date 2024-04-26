@@ -10,4 +10,6 @@ String = Paragraph <p>String</p>
 ###### = H6 <H6>String</H6>
 ; = Coment (Does not appear in the HTML file)
 <String> = link <a href=String> String </a>
-* = background-color: String
+* = background-color: Hexadecimal
+-- = progress "value= 40" 
+[] = image "url"
