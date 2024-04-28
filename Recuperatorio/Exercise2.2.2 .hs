@@ -23,4 +23,7 @@ myMap f (x:xs) = f x : myMap f xs
 
 balanced :: Int -> Tree ()
 balanced 0 = Leaf ()
-balanced n = Node (balanced1 (n-1)) (balanced1 (n-1))
+balanced n = Node (balanced (n-1)) (balanced (n-1))
+
+sized :: Int -> Tree Int
+sized n = unfoldTree (\x -> if x == n then Left x else Right (x+1, x+1)) 1
