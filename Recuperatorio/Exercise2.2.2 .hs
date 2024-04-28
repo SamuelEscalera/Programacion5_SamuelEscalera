@@ -20,3 +20,7 @@ myIterate f a = unfoldr (\x -> Just (x, f x)) a
 myMap :: (a -> b) -> [a] -> [b]
 myMap _ [] = []
 myMap f (x:xs) = f x : myMap f xs
+
+balanced :: Int -> Tree ()
+balanced 0 = Leaf ()
+balanced n = Node (balanced1 (n-1)) (balanced1 (n-1))
