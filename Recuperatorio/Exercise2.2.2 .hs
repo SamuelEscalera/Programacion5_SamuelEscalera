@@ -17,5 +17,6 @@ unfoldTree next x =
 myIterate :: (a -> a) -> a -> [a]
 myIterate f a = unfoldr (\x -> Just (x, f x)) a
 
-fExample :: Int -> Int
-fExample x = x
+myMap :: (a -> b) -> [a] -> [b]
+myMap _ [] = []
+myMap f (x:xs) = f x : myMap f xs
